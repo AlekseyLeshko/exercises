@@ -32,7 +32,7 @@ test('negative step', t => {
 
 test('empty logger', t => {
   const expected = [];
-  interval(2, 0, -1);
+  interval(0, 2, -1);
   t.deepEqual(logArr, expected);
 });
 
