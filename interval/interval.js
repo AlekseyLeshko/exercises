@@ -8,7 +8,7 @@ let logger = function(val) {
 let interval = function(startVal, endVal, step) {
 }
 
-test.before(t => {
+test.beforeEach(t => {
   logArr = [];
 });
 
