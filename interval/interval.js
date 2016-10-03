@@ -1,12 +1,12 @@
 import test from 'ava';
+import myFirstDecesion from './first-decision';
 
 let logArr = [];
 let logger = function(val) {
   logArr.push(val);
 }
 
-let interval = function(startVal, endVal, step) {
-}
+let interval = myFirstDecesion;
 
 test.beforeEach(t => {
   logArr = [];
