@@ -7,10 +7,12 @@ Iterate all the integers in a given interval with given step
 
 ## Example
 ```js
-var startVal = 0;
-var endVal = 5;
-var step = 1;
-fun(startVal, endVal, step);
+let startVal = 0;
+let endVal = 5;
+let step = 1;
+let logger = function(val) {
+}
+fun(startVal, endVal, step, logger);
 
 // 0, 1, 2, 3, 4 , 5
 ```
