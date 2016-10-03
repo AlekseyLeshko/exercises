@@ -7,6 +7,7 @@ Iterate all the integers in a given interval with given step
 
 ## Example
 ```js
+let arr = [];
 let startVal = 0;
 let endVal = 5;
 let step = 1;
@@ -14,7 +15,7 @@ let logger = function(val) {
 }
 fun(startVal, endVal, step, logger);
 
-// 0, 1, 2, 3, 4 , 5
+// arr = [ 0, 1, 2, 3, 4 , 5]
 ```
 
 ## Restrictions
