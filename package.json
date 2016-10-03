@@ -1,0 +1,16 @@
+{
+  "name": "exercises",
+  "version": "0.0.1",
+  "description": "interesting things and tasks",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": {
+    "name": "Aleksey Leshko",
+    "email": "alekseyleshko@gmail.com",
+    "url": "https://github.com/AlekseyLeshko"
+  },
+  "license": "ISC"
+}
