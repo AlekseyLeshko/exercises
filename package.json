@@ -5,7 +5,8 @@
   "dependencies": {},
   "devDependencies": {
     "ava": "^0.16.0",
-    "ava-spec": "^1.0.1"
+    "ava-spec": "^1.0.1",
+    "chuhai": "^1.2.0"
   },
   "scripts": {
     "test": "ava"
