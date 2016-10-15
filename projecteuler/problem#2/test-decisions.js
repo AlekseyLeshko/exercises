@@ -1,5 +1,5 @@
 import test from 'ava';
-import baseDecision  from './decisions/base-decision';
+import baseDecision  from './decisions/base';
 
 test('sum for values less 100', t => {
   const max = 100;
