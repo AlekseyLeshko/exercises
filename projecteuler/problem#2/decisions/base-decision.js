@@ -1,4 +1,4 @@
-let getSum = function(max) {
+function getSum(max) {
   let sum = 0;
   let isFinish = isLessOrEqual.bind(null, max);
 
