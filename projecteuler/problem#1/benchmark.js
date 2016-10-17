@@ -1,13 +1,12 @@
 import test from 'ava';
 import { wrapper } from 'chuhai';
 import myFirstDecesion from './decisions/first-decision';
+import mySecondDecesion from './decisions/second-decision';
+import standartDecesion from './decisions/standart';
 
 const suite = wrapper(test);
 
 suite('sum natural numbers below 10', t => {
-  t.set('maxTime', 0.01);
-  t.set('minSamples', 10);
-
   const number = 10;
   const expected = 23;
   let actual;
@@ -21,14 +20,15 @@ suite('sum natural numbers below 10', t => {
   });
 
   t.bench('second decision', () => {
-    actual = myFirstDecesion(number);
+    actual = mySecondDecesion(number);
+  });
+  
+  t.bench('standart decision', () => {
+    actual = standartDecesion(number);
   });
 });
 
 suite('sum natural numbers below 1000', t => {
-  t.set('maxTime', 0.01);
-  t.set('minSamples', 10);
-
   const number = 1000;
   const expected = 233168;
   let actual;
@@ -42,7 +42,11 @@ suite('sum natural numbers below 1000', t => {
   });
 
   t.bench('second decision', () => {
-    actual = myFirstDecesion(number);
+    actual = mySecondDecesion(number);
+  });
+
+  t.bench('standart decision', () => {
+    actual = standartDecesion(number);
   });
 });
 
