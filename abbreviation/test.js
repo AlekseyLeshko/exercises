@@ -10,4 +10,13 @@ describe('abbreviate', it => {
 
     t.is(actual, expected);
   });
+
+  it('internationalization', t => {
+    const expected = 'i18n';
+    const str = 'internationalization';
+
+    let actual = abbreviate(str);
+
+    t.is(actual, expected);
+  });
 });
