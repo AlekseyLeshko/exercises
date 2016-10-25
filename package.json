@@ -16,5 +16,11 @@
     "email": "alekseyleshko@gmail.com",
     "url": "https://github.com/AlekseyLeshko"
   },
-  "license": "ISC"
+  "license": "ISC",
+  "ava": {
+    "babel": "inherit",
+    "require": [
+      "babel-register"
+    ]
+  }
 }
