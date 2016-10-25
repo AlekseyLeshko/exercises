@@ -1,4 +1,4 @@
-let getSumMultiples3and5 = function(maxVal) {
+export default (maxVal) => {
   let sum = 0;
   
   var nextStep = function(curretnVal) {
@@ -15,6 +15,3 @@ let getSumMultiples3and5 = function(maxVal) {
 
   return nextStep(3);
 }
-
-module.exports = getSumMultiples3and5;
-

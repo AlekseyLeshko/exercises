@@ -1,7 +1,7 @@
-let getSumMultiples3and5 = function(maxVal) {
+export default (maxVal) => {
   let sum = 0;
 
-  for (var i = maxVal- 1; i > 0; i--) {
+  for (let i = maxVal- 1; i > 0; i--) {
     if (i % 3 === 0 || i % 5 === 0) {
       sum += i;
     }
@@ -9,5 +9,3 @@ let getSumMultiples3and5 = function(maxVal) {
 
   return sum;
 }
-
-module.exports = getSumMultiples3and5;

@@ -1,4 +1,4 @@
-let getSumMultiples3and5 = function(maxVal) {
+export default (maxVal) => {
   const firstDivider = 3;
   const secondDivider = 5;
   maxVal--;
@@ -15,5 +15,3 @@ let getSumMultiples3and5 = function(maxVal) {
 
   return sum;
 }
-
-module.exports = getSumMultiples3and5;
