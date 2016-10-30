@@ -21,44 +21,49 @@ function getAbbreviate(startIndex, endIndex, arr) {
   return res;
 }
 
+function inWord(curr, index, arr) {
+  if (!isChar(curr) ) {
+    endIndex = index - 1;
+    list.push(getAbbreviate(startIndex, endIndex, arr));
+    list.push(curr);
+    
+    return false;
+  } 
+  if (index === arr.length - 1) {
+    endIndex = index;
+    list.push(getAbbreviate(startIndex, endIndex, arr));
+
+    return false;
+  }
+  if (isChar(curr)) {
+    return true;
+  }
+}
+
+function outWord(curr, index, arr) {
+  if (!isChar(curr)) {
+    list.push(curr);
+    return false;
+  } 
+
+  if (index === arr.length - 1) {
+    list.push(curr);
+  }
+  startIndex = index;
+  return true;
+}
+
+let startIndex = 0;
+let endIndex = 0;
+let list = [];
+
 let abbreviate = function(str) {
-  let startIndex = 0;
-  let endIndex = 0;
-  let list = [];
+  list = [];
+
   const res = str
     .split('')
-    .reduce(function(inWord, curr, index, arr) {
-      if (inWord) {
-        if (!isChar(curr) ) {
-          endIndex = index - 1;
-          list.push(getAbbreviate(startIndex, endIndex, arr));
-          list.push(curr);
-          return false;
-        } 
-        if (index === arr.length - 1) {
-          endIndex = index;
-          list.push(getAbbreviate(startIndex, endIndex, arr));
-          return false;
-        }
-        if (isChar(curr)) {
-          return true;
-        }
-      }
-
-      if (!inWord) {
-        if (!isChar(curr)) {
-          list.push(curr);
-          return false;
-        } else {
-          if (index === arr.length - 1) {
-            list.push(curr);
-          }
-          startIndex = index;
-          return true;
-        }
-      }
-
-      return false;
+    .reduce(function(res, curr, index, arr) {
+      return res ? inWord(curr, index, arr) : outWord(curr, index, arr);
     }, false);
 
   return list.join('');
