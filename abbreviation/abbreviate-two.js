@@ -13,7 +13,7 @@ function isSmallWord(str) {
 let abbreviate = function(str) {
   let arr = str.split(/[\s-!,]+/);
   arr.map(function(curr, index, add) {
-    if (isSmallWord(curr) || str.indexOf(curr) === -1) {
+    if (isSmallWord(curr) || !str.includes(curr)) {
       return;
     }
 
