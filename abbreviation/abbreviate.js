@@ -69,4 +69,4 @@ let abbreviate = function(str) {
   return list.join('');
 }
 
-module.exports = abbreviate;
+export default abbreviate;
