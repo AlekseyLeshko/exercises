@@ -3,7 +3,8 @@ function isChar(str) {
 }
 
 function isSmallWord(startIndex, endIndex) {
-  return endIndex - startIndex < 4;
+  const charCount = endIndex - startIndex + 1;
+  return charCount < 4;
 }
 
 function getAbbreviate(startIndex, endIndex, arr) {
@@ -28,12 +29,18 @@ let abbreviate = function(str) {
     .split('')
     .reduce(function(inWord, curr, index, arr) {
       if (inWord) {
-        if (!isChar(curr)) {
+        if (!isChar(curr) ) {
           endIndex = index - 1;
           list.push(getAbbreviate(startIndex, endIndex, arr));
           list.push(curr);
           return false;
-        } else {
+        } 
+        if (index === arr.length - 1) {
+          endIndex = index;
+          list.push(getAbbreviate(startIndex, endIndex, arr));
+          return false;
+        }
+        if (isChar(curr)) {
           return true;
         }
       }
@@ -43,6 +50,9 @@ let abbreviate = function(str) {
           list.push(curr);
           return false;
         } else {
+          if (index === arr.length - 1) {
+            list.push(curr);
+          }
           startIndex = index;
           return true;
         }
