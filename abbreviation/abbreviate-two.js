@@ -13,13 +13,10 @@ function isSmallWord(str) {
 let abbreviate = function(str) {
   let arr = str.split(/[\s-!,]+/);
   arr.map(function(curr, index, add) {
-    if (isSmallWord(curr)) {
+    if (isSmallWord(curr) || str.indexOf(curr) === -1) {
       return;
     }
 
-    if (str.indexOf(curr) === -1) {
-      return;
-    }
     const abbreviateStr = getAbbreviate(curr);
     str = str.replace(curr, abbreviateStr);
   });
