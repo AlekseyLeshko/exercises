@@ -1,6 +1,7 @@
 import {describe} from 'ava-spec';
 import abbreviate from '../decisions/abbreviate'
 import abbreviateTwo from '../decisions/abbreviate-two'
+import abbreviateClever from '../decisions/clever'
 
 describe('abbreviate:', it => {
   describe('custom tests:', it => {
@@ -10,6 +11,7 @@ describe('abbreviate:', it => {
     it.afterEach(t => {
       t.is(abbreviate(str), expected);
       t.is(abbreviateTwo(str), expected);
+      t.is(abbreviateClever(str), expected);
     });
 
     it('big sentence', t => {
@@ -55,6 +57,7 @@ describe('abbreviate:', it => {
       }
       t.is(abbreviate(input), output);
       t.is(abbreviateTwo(input), output);
+      t.is(abbreviateClever(input), output);
       input = '';
       output = '';
     }
