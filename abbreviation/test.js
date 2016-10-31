@@ -32,4 +32,31 @@ describe('abbreviate:', it => {
       str = 'on on a';
     });
   });
+
+  it('generate tests', t => {
+    let joins = [', ', '-', ': ', '; ', '. ', '\''];
+    let words = ['cat', 'mat', 'doggy', 'balloon', 'sits', 'sat', 'a', 'is', 'on', 'the', 'monolithic', 'double-barreled'];
+    let wordsAbbreviated = ['cat', 'mat', 'd3y', 'b5n', 's2s', 'sat', 'a', 'is', 'on', 'the', 'm8c', 'd4e-b6d'];
+
+    let input = '';
+    let output='';
+    let join;
+    let wordIndex;
+    for(let i = 0; i < 100; i++) {
+      for(let j = 0; j < Math.random(); j += 0.1) {
+        wordIndex = (Math.random() * joins.length) | 0;
+        if(input.length > 0) {
+          input += ' ';
+          output += ' ';
+        }
+        wordIndex = (Math.random() * words.length) | 0;
+        input += words[wordIndex];
+        output += wordsAbbreviated[wordIndex];
+      }
+      t.is(abbreviate(input), output);
+      t.is(abbreviateTwo(input), output);
+      input = '';
+      output = '';
+    }
+  });
 });
