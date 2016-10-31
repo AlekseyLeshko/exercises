@@ -1,6 +1,6 @@
 import {describe} from 'ava-spec';
-import abbreviate from './abbreviate'
-import abbreviateTwo from './abbreviate-two'
+import abbreviate from '../decisions/abbreviate'
+import abbreviateTwo from '../decisions/abbreviate-two'
 
 describe('abbreviate:', it => {
   describe('custom tests:', it => {
@@ -33,7 +33,7 @@ describe('abbreviate:', it => {
     });
   });
 
-  it('generate tests', t => {
+  it('generated tests', t => {
     let joins = [', ', '-', ': ', '; ', '. ', '\''];
     let words = ['cat', 'mat', 'doggy', 'balloon', 'sits', 'sat', 'a', 'is', 'on', 'the', 'monolithic', 'double-barreled'];
     let wordsAbbreviated = ['cat', 'mat', 'd3y', 'b5n', 's2s', 'sat', 'a', 'is', 'on', 'the', 'm8c', 'd4e-b6d'];
