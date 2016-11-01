@@ -1,12 +1,10 @@
 import {describe} from 'ava-spec';
-import myFirstDecesion from './first-decision';
+import interval from './first-decision';
 
 let logArr = [];
 let logger = function(val) {
   logArr.push(val);
 }
-
-let interval = myFirstDecesion;
 
 describe('interval', it => {
   it.beforeEach(t => {
