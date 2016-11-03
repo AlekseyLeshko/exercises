@@ -8,6 +8,7 @@ function* myGenerator() {
 function* fibonacci() {
   let prev = 0;
   let curr = 1;
+
   while(true) {
     let newNumber = curr + prev; 
     prev = curr;
