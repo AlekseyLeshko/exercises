@@ -28,6 +28,12 @@ function* g2() {
   yield 4;
 }
 
+function* g3() {
+  yield* [1, 2];
+  yield* "34";
+  yield* Array.from(arguments);
+}
+
 describe('generators:', it => {
   it('sample generator', t => {
     const gen = myGenerator();
@@ -62,5 +68,16 @@ describe('generators:', it => {
     actual = gen.next(); 
 
     t.true(actual.done);
+  });
+
+  it('other objects', t => {
+    let gen = g3(5, 6);
+
+    t.is(gen.next().value, 1);
+    t.is(gen.next().value, 2);
+    t.is(gen.next().value, '3');
+    t.is(gen.next().value, '4');
+    t.is(gen.next().value, 5);
+    t.is(gen.next().value, 6);
   });
 });
