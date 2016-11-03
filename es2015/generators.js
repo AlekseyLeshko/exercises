@@ -17,6 +17,17 @@ function* fibonacci() {
   }
 }
 
+function* g1() {
+  yield 2;
+  yield 3;
+}
+
+function* g2() {
+  yield 1;
+  yield* g1();
+  yield 4;
+}
+
 describe('generators:', it => {
   it('sample generator', t => {
     const gen = myGenerator();
@@ -36,5 +47,20 @@ describe('generators:', it => {
     t.is(gen.next().value, 5);
     t.is(gen.next().value, 8);
     t.is(gen.next().value, 13);
+  });
+
+  it('generator with generator', t => {
+    const gen = g2();
+
+    let actual;
+    for (let i = 1; i < 5; i++) {
+      actual = gen.next(); 
+
+      t.false(actual.done);
+      t.is(actual.value, i);
+    }
+    actual = gen.next(); 
+
+    t.true(actual.done);
   });
 });
