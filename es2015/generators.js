@@ -50,14 +50,17 @@ describe('generators:', it => {
   });
 
   it('fibonacci generator', t => {
+    const expected = [1, 2, 3, 5, 8, 13];
+    let index = 0;
     const gen = fibonacci();
 
-    t.is(gen.next().value, 1);
-    t.is(gen.next().value, 2);
-    t.is(gen.next().value, 3);
-    t.is(gen.next().value, 5);
-    t.is(gen.next().value, 8);
-    t.is(gen.next().value, 13);
+    for (let n of fibonacci()) {
+      t.is(n, expected[index]);
+      index++;
+      if (n >= 13) {
+        break;
+      }
+    }
   });
 
   it('generator with generator', t => {
