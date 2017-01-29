@@ -1,12 +1,23 @@
-import { describe } from 'ava-spec';
+import test from 'ava';
 import removeDuplicates from './remove-duplicates';
 
-describe('remove duplicates', it => {
-  it('a', t => {
-    const expected = 'Helo';
+test('should return str without duplicates', t => {
+  const arr = [{
+    str: 'Hellllllllo!!11111One',
+    expected: 'Helo!1One'
+  }, {
+    str: 'obj..method((paramss);',
+    expected: 'obj.method(params);'
+  }, {
+    str: 'YYYyyyeah!!!',
+    expected: 'Yyeah!'
+  }];
 
-    const actual = removeDuplicates('Hellllllllllo');
+  arr.map((elt) => {
+    const actual = removeDuplicates(elt.str);
 
-    t.is(actual, expected);
+    console.log(actual);
+    t.is(actual, elt.expected);
   });
 });
+
