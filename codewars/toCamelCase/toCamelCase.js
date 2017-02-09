@@ -3,21 +3,23 @@ export default function(string) {
 
   string
     .split('')
-    .reduce((inWord, char) => {
+    .reduce((withinWord, char, index) => {
       if (isSeparator(char)) {
-        return true;
+        return false;
       }
 
-      if (inWord) {
+      if (!withinWord) {
         newStr += char.toUpperCase();
 
-        return false;
+        return true;
       }
 
       newStr += char;
 
-      return false;
+      return true;
     }, false);
+
+  newStr = newStr[0].toLowerCase() + newStr.slice(1, newStr.lenght);
 
   return newStr;
 }

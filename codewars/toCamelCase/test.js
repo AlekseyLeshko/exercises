@@ -11,6 +11,24 @@ describe('toCamelCase:', it => {
     t.is(actual, expected);
   });
 
+  it('should convert pascal case', t => {
+    const expected = 'helloWorld';
+    const str = 'HelloWorld';
+
+    const actual = toCamelCase(str);
+
+    t.is(actual, expected);
+  });
+
+  it('should convert str with first char is separator', t => {
+    const expected = 'helloWorld';
+    const str = '_HelloWorld';
+
+    const actual = toCamelCase(str);
+
+    t.is(actual, expected);
+  });
+
   it('should char is separator', t => {
     const char = '_';
 
