@@ -2,31 +2,26 @@ import { describe } from 'ava-spec';
 import toCamelCase, { isSeparator } from './toCamelCase';
 
 describe('toCamelCase:', it => {
-  it('should convert snake case', t => {
+  it('should convert all strings to camel case', t => {
     const expected = 'helloWorld';
-    const str = 'hello_world';
+    const list = [
+      'hello_world',
+      '_hello_world',
+      'Hello_world',
+      '_Hello_world',
+      '-hello_world',
+      'hello-world',
+      'HELLO_WORLD',
+      'Hello_World',
+      '_Hello_World',
+      '_Hello_World-',
+      'hello world',
+      '__HELLO_WORLD___',
+    ];
 
-    const actual = toCamelCase(str);
-
-    t.is(actual, expected);
-  });
-
-  it('should convert pascal case', t => {
-    const expected = 'helloWorld';
-    const str = 'HelloWorld';
-
-    const actual = toCamelCase(str);
-
-    t.is(actual, expected);
-  });
-
-  it('should convert str with first char is separator', t => {
-    const expected = 'helloWorld';
-    const str = '_HelloWorld';
-
-    const actual = toCamelCase(str);
-
-    t.is(actual, expected);
+    list.map((str) => {
+      t.is(toCamelCase(str), expected);
+    });
   });
 
   it('should char is separator', t => {

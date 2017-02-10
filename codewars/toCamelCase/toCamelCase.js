@@ -14,7 +14,7 @@ export default function(string) {
         return true;
       }
 
-      newStr += char;
+      newStr += char.toLowerCase();
 
       return true;
     }, false);
@@ -25,7 +25,7 @@ export default function(string) {
 }
 
 export function isSeparator(char) {
-  const separators = '_';
+  const separators = '_- ';
 
   return separators.includes(char);
 }
