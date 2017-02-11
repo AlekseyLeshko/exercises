@@ -1,25 +1,17 @@
 export default function(string) {
-  let newStr = '';
+  const separators = /[_-\s]/ig;
+  const arr = string.split(separators);
 
-  string
-    .split('')
-    .reduce((withinWord, char, index) => {
-      if (isSeparator(char)) {
-        return false;
+  const newStr = arr
+    .filter((word) => word)
+    .map((word, index) => {
+      if (index === 0) {
+        return word.toLowerCase();
       }
 
-      if (!withinWord) {
-        newStr += char.toUpperCase();
-
-        return true;
-      }
-
-      newStr += char.toLowerCase();
-
-      return true;
-    }, false);
-
-  newStr = newStr[0].toLowerCase() + newStr.slice(1, newStr.lenght);
+      return word.charAt(0).toUpperCase() + word.substring(1).toLowerCase();
+    })
+    .join('');
 
   return newStr;
 }
@@ -28,5 +20,13 @@ export function isSeparator(char) {
   const separators = '_- ';
 
   return separators.includes(char);
+}
+
+export function isFirstLetterOfWord(letter) {
+  if (letter === letter.toUpperCase()) {
+    return true;
+  }
+
+  return false;
 }
 

@@ -1,5 +1,5 @@
 import { describe } from 'ava-spec';
-import toCamelCase, { isSeparator } from './toCamelCase';
+import toCamelCase, { isSeparator, isFirstLetterOfWord } from './toCamelCase';
 
 describe('toCamelCase:', it => {
   it('should convert all strings to camel case', t => {
@@ -36,6 +36,22 @@ describe('toCamelCase:', it => {
     const char = 'a';
 
     const actual = isSeparator(char);
+
+    t.falsy(actual);
+  });
+
+  it('should letter is first in word', t => {
+    const letter = 'A';
+
+    const actual = isFirstLetterOfWord(letter);
+
+    t.truthy(actual);
+  });
+
+  it('should letter is not first in word', t => {
+    const letter = 'a';
+
+    const actual = isFirstLetterOfWord(letter);
 
     t.falsy(actual);
   });
