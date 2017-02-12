@@ -2,6 +2,7 @@ import test from 'ava';
 import { wrapper } from 'chuhai';
 import capitalizeSimpleDecision from './capitalize-simple-decision';
 import capitalizeMap from './capitalize-map';
+import capitalizeRest from './capitalize-rest';
 
 const suite = wrapper(test);
 
@@ -20,6 +21,10 @@ suite('capitalize string', t => {
 
   t.bench('map decision', () => {
     actual = capitalizeMap(str);
+  });
+  
+  t.bench('with rest decision', () => {
+    actual = capitalizeRest(str);
   });
 });
 

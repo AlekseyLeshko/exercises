@@ -1,6 +1,7 @@
 import { describe } from 'ava-spec';
 import capitalizeSimpleDecision from './capitalize-simple-decision';
 import capitalizeMap from './capitalize-map';
+import capitalizeRest from './capitalize-rest';
 
 describe('capitalize:', it => {
   it('should first letter is upper case', t => {
@@ -18,6 +19,9 @@ describe('capitalize:', it => {
       t.is(actual, expected);
       
       actual = capitalizeMap(str);
+      t.is(actual, expected);
+
+      actual = capitalizeRest(str);
       t.is(actual, expected);
     });
   });
