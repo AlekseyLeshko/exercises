@@ -1,4 +1,6 @@
 export default function(str) {
-  return '';
+  const newStr = str[0].toUpperCase() + str.slice(1);
+
+  return newStr;
 }
 
