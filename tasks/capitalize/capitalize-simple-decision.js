@@ -1,5 +1,5 @@
 export default function(str) {
-  const newStr = str[0].toUpperCase() + str.slice(1);
+  const newStr = str[0].toUpperCase() + str.slice(1).toLowerCase();
 
   return newStr;
 }
