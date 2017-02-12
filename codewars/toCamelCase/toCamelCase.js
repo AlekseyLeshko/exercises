@@ -1,15 +1,13 @@
 export default function(string) {
   const separators = /[_-\s]/ig;
-  const arr = string.split(separators);
 
-  const newStr = arr
+  const newStr = string
+    .split(separators)
     .filter((word) => word)
     .map((word, index) => {
-      if (index === 0) {
-        return word.toLowerCase();
-      }
+      word = word.toLowerCase();
 
-      return word.charAt(0).toUpperCase() + word.substring(1).toLowerCase();
+      return index? word.charAt(0).toUpperCase() + word.substring(1): word;
     })
     .join('');
 
