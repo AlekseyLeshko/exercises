@@ -16,17 +16,3 @@ export default function(string) {
   return newStr;
 }
 
-export function isSeparator(char) {
-  const separators = '_- ';
-
-  return separators.includes(char);
-}
-
-export function isFirstLetterOfWord(letter) {
-  if (letter === letter.toUpperCase()) {
-    return true;
-  }
-
-  return false;
-}
-
