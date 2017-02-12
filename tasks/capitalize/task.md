@@ -1,0 +1,6 @@
+capitalize
+=
+
+```
+capitalize('hello'); // Hello
+```
