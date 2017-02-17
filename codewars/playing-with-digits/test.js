@@ -2,7 +2,7 @@ import { describe } from 'ava-spec';
 import digPow from './digPow';
 
 describe('playing-with-digits:', it => {
-  it('should', t => {
+  it('should return coefficient or -1', t => {
     const list = [{
       number: 89,
       power: 1,
