@@ -1,6 +1,6 @@
 import {describe} from 'ava-spec';
-import myFirstDecesion from './decisions/first-decision';
-import mySecondDecesion from './decisions/second-decision';
+import myFirstDecesion from './decisions/first';
+import mySecondDecesion from './decisions/second';
 import standartDecesion from './decisions/standart';
 
 describe('first decision: sum natural numbers below', it => {

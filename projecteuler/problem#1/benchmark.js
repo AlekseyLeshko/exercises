@@ -1,7 +1,7 @@
 import test from 'ava';
 import { wrapper } from 'chuhai';
-import myFirstDecesion from './decisions/first-decision';
-import mySecondDecesion from './decisions/second-decision';
+import myFirstDecesion from './decisions/first';
+import mySecondDecesion from './decisions/second';
 import standartDecesion from './decisions/standart';
 
 const suite = wrapper(test);
