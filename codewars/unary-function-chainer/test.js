@@ -3,7 +3,7 @@ import chained from './chained';
 
 const f1 = (x) => x * 2;
 const f2 = (x) => x + 2;
-const f3 = (x) => Math.pow(x,2);
+const f3 = (x) => Math.pow(x, 2);
 
 const f4 = (x) => x.split('').concat().reverse().join('').split(' ');
 const f5 = (xs) => xs.concat().reverse();
