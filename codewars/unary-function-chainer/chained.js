@@ -1,8 +1,3 @@
-export default (functions) => {
-  return (firstVal) => {
-    return functions.reduce((val, fun) => {
-      return fun(val);
-    }, firstVal);
-  };
-}
+export default (funs) =>
+  (initVal) => funs.reduce((val, fun) => fun(val), initVal);
 
