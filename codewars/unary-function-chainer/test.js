@@ -14,6 +14,8 @@ describe('unary-const-chainer:', it => {
     const expected = 'merol_muspi';
     const str = 'lorem ipsum';
 
+    t.is(chained([f2])(0), 2);
+    t.is(chained([f2, f2])(0), 4);
     t.is(chained([f1,f2,f3])(0), 4);
     t.is(chained([f1,f2,f3])(2), 36);
     t.is(chained([f3,f2,f1])(2), 12);
