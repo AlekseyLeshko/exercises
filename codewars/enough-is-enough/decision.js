@@ -1,11 +1,8 @@
 export const deleteNth = (list, number) => {
-  const dic = {};
+  const cache = {};
 
   return list.filter(item => {
-    if (!dic[item]) {
-      dic[item] = 0;
-    }
-
-    return dic[item]++ < number;
+    cache[item] = cache[item] ? cache[item] + 1 : 1;
+    return cache[item] <= number;
   });
 };
