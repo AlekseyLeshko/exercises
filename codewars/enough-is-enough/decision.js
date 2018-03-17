@@ -1,11 +1,11 @@
 export const deleteNth = (list, number) => {
-  const dictionary = {};
+  const frequencyDictionary = {};
 
   return list.filter(item => {
-    if (dictionary[item] === undefined) {
-      dictionary[item] = 0;
+    if (frequencyDictionary[item] === undefined) {
+      frequencyDictionary[item] = 0;
     }
 
-    return dictionary[item]++ < number;
+    return frequencyDictionary[item]++ < number;
   });
 };
