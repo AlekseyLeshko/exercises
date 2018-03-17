@@ -1,8 +1,7 @@
 export const deleteNth = (list, number) => {
-  const cache = {};
-
-  return list.filter(item => {
-    cache[item] = cache[item] ? cache[item] + 1 : 1;
-    return cache[item] <= number;
-  });
+  return list.reduce((arr, item) => {
+    return count(arr, item) < number ? arr.concat(item) : arr;
+  }, []);
 };
+
+const count = (arr, item) => arr.filter(i => i === item).length;
