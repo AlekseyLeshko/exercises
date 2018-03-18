@@ -1,20 +1,7 @@
 import isEqual from 'lodash/isEqual';
 
 export default function(word, words) {
-  const baseCache = getCache(word);
+  const baseCache = word.split('').sort().toString();
 
-  return words.filter(w => isEqual(getCache(w), baseCache));
-
+  return words.filter(w => w.split('').sort().toString() === baseCache);
 }
-
-export const getCache = (str) => {
-  const cache = {};
-
-  str
-    .split('')
-    .forEach(c => {
-      cache[c] = cache[c] ? cache[c] + 1 : 1;
-    });
-
-  return cache;
-};
