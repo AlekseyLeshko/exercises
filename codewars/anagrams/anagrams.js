@@ -1,7 +1,3 @@
-import isEqual from 'lodash/isEqual';
+export default (word, words) => words.filter(w => getCache(w) === getCache(word));
 
-export default function(word, words) {
-  const baseCache = word.split('').sort().toString();
-
-  return words.filter(w => w.split('').sort().toString() === baseCache);
-}
+export const getCache = (str) => str.split('').sort().toString();
