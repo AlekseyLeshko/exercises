@@ -1,34 +1,16 @@
 import PRESET_COLORS from './colors';
 
-const getHex = (str) => {
-  if (isHex(str)) {
-    return str;
-  }
-
-  if (isName(str)) {
-    return PRESET_COLORS[str.toLowerCase()];
-  }
-
-  if (isShortHex(str)) {
-    return str
-      .split('')
-      .map((c, index) =>
-        index > 0 ? c + c : c)
-      .join('');
-  }
-}
+const hexToDec = (string) => parseInt(string, 16);
 
 export default (str) => {
-  const hex = getHex(str);
-  const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+  let hex = (PRESET_COLORS[str.toLowerCase()] || str).slice(1);
+  if (hex.length === 3) {
+    hex = hex.replace(/./g, '$&$&');
+  }
 
   return {
-    r: parseInt(result[1], 16),
-    g: parseInt(result[2], 16),
-    b: parseInt(result[3], 16),
+    r: hexToDec(hex.substring(0, 2)),
+    g: hexToDec(hex.substring(2, 4)),
+    b: hexToDec(hex.substring(4, 6)),
   };
 };
-
-export const isHex = (color) => /^#[0-9A-F]{6}$/i.test(color);
-export const isShortHex = (color) => /^#[0-9A-F]{3}$/i.test(color);
-export const isName = (color) => /^[a-zA-z]+$/i.test(color);
