@@ -8,4 +8,3 @@ describe('iq test:', it => {
     t.is(iqTest('1 1 2 3'), 3);
   });
 });
-

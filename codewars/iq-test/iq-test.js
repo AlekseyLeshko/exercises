@@ -1,8 +1,7 @@
 export default (numbers) => {
-  const list = numbers.split(' ');
-  const number = list.filter(num => num % 2 === 0).length === 1 ?
-    list.find(num => num % 2 === 0) :
-    list.find(num => num % 2 === 1);
+  const nums = numbers.split(' ').map(num => num % 2);
+  const sum = nums.reduce((s, num) => s + num);
+  const target = sum > 1 ? 0 : 1;
 
-  return list.indexOf(number) + 1;
+  return nums.indexOf(target) + 1;
 };
