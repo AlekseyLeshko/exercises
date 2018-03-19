@@ -31,9 +31,5 @@ describe('parse html color:', it => {
     const color = 'LimeGreen';
     t.truthy(isName(color));
   });
-
-  it('should include 3 types', t => {
-    t.is(Object.keys(types).length, 3);
-  });
 });
 
