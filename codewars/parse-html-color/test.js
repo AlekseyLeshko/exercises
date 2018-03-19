@@ -1,5 +1,5 @@
 import { describe } from 'ava-spec';
-import parseColor, {isHex, isSmallHex, isName, types} from './parse-color';
+import parseColor, {isHex, isShortHex, isName, types} from './parse-color';
 
 describe('parse html color:', it => {
   it('should return color', t => {
@@ -24,7 +24,7 @@ describe('parse html color:', it => {
 
   it('should small hex', t => {
     const color = '#3B7';
-    t.truthy(isSmallHex(color));
+    t.truthy(isShortHex(color));
   });
 
   it('should name', t => {

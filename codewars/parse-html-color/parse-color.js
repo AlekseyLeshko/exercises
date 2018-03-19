@@ -9,7 +9,7 @@ const getHex = (str) => {
     return PRESET_COLORS[str.toLowerCase()];
   }
 
-  if (isSmallHex(str)) {
+  if (isShortHex(str)) {
     return str
       .split('')
       .map((c, index) =>
@@ -30,5 +30,5 @@ export default (str) => {
 };
 
 export const isHex = (color) => /^#[0-9A-F]{6}$/i.test(color);
-export const isSmallHex = (color) => /^#[0-9A-F]{3}$/i.test(color);
+export const isShortHex = (color) => /^#[0-9A-F]{3}$/i.test(color);
 export const isName = (color) => /^[a-zA-z]+$/i.test(color);
