@@ -10,9 +10,7 @@ export default (string) =>
     }))
     .sort((a ,b) =>
       a.weight === b.weight ?
-        a.val > b.val ?
-          1 :
-          -1 :
+        a.val.localeCompare(b.val) :
         a.weight - b.weight)
     .map(item => item.val)
     .join(' ');
