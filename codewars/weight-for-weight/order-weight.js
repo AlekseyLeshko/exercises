@@ -8,11 +8,11 @@ export default (string) =>
         .reduce((weight, char) =>
           weight += +char, 0),
     }))
-    .sort((a ,b) => {
-      const res = a.weight === b.weight ?
-        a.val > b.val :
-        a.weight - b.weight
-      return res;
-    })
+    .sort((a ,b) =>
+      a.weight === b.weight ?
+        a.val > b.val ?
+          1 :
+          -1 :
+        a.weight - b.weight)
     .map(item => item.val)
     .join(' ');
